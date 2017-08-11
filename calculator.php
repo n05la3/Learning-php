@@ -45,7 +45,7 @@ class Advance_calc extends Calculator
                 die("Pass the arguments when the object is created");
         if(in_array($method, array_keys(Advance_calc::$_allowed_functions), TRUE))
         { 
-            $func_param = array($this->num2);
+            $func_param = array($this->num1);
             if(Advance_calc::$_allowed_functions[$method]===2)
                 array_push ($func_param, $this->num2);
             return call_user_func_array($method, $func_param);
