@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>handling multi form values</title>
+    </head>
+    <div>
+        <form action="form_handler.php" method="post">
+            <label for="my_choice">Which group will you love to join (you can select more than one group):<br></label>
+            <select name="my_choice[]" id="my_choice" size="5" multiple="multiple">
+                <option id="my_choice" value="group_1" >Group 1</option>
+                <option id="my_choice2" value="group_2" >group 2</option>
+                <option id="my_choice3" value="group_3" >Group 3</option>
+                <option id="my_choice3" value="group_4" >Group 4</option>
+                <option id="my_choice3" value="group_5" >Group 5</option>
+            </select>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+</html>
