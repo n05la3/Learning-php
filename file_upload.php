@@ -47,7 +47,7 @@
                 }   
                 echo $message;
             }
-        
+        }
     }
     
     function display_form()
