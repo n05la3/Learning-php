@@ -31,8 +31,6 @@ in order to make it much more useful, test all security issues.-->
         display_form();
     function validate_number()
     {
-        $rand_num= rand(1, 100); 
-        echo $rand_num;
         if(set_hidden_value()>4)
             die("<h2>You have exhausted your number of chances, thanks for trying</h2>");        
         if(!empty($_POST['rand_num']))
@@ -41,7 +39,7 @@ in order to make it much more useful, test all security issues.-->
                 echo "You entered: ".$_POST['rand_num']."<br>";
                 die ("<h2>You can only enter numbers between 1 and 100, thanks for trying</h2>");
             }
-            if($rand_num===$_POST['rand_num'])
+            if(!empty($_POST['secret_code']) && $_POST['secret_code']===$_POST['rand_num'])
                 die ("<h2>Waoh, u guessed right. EXCELLENT WORK!!!</h2>");               
         return true;
                 
@@ -69,10 +67,19 @@ in order to make it much more useful, test all security issues.-->
             
     }
     
+    function remember_secret_code()
+    {
+        if(isset($_POST['secret_code']))
+            return rand(1,100);
+        else if(!empty($_POST['secret_code']))
+            return $_POST['secret_code'];
+    }
+    
     function display_form()
     { ?> 
         <form action="random_number_generator.php" method="POST">
-            <input type="hidden" value =" <?php echo set_hidden_value() ?> " name="hidden" id="value_manipulator" />
+            <input type="hidden" name="secret_code" value="<?php echo remember_secret_code()?>"/>
+            <input type="hidden" value =" <?php echo set_hidden_value() ?>" name="hidden" id="value_manipulator" />
             <label for="rand">Enter a random number between 1 and 100</label><br/>
             <input type="number" name="rand_num" id="rand" placeholder="Enter the number here"/><br>
             <label for="submit">Click Submit to send guess</label><br/>
