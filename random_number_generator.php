@@ -79,10 +79,10 @@ in order to make it much more useful, test all security issues.-->
     { ?> 
         <form action="random_number_generator.php" method="POST">
             <input type="hidden" name="secret_code" value="<?php echo remember_secret_code()?>"/>
-            <input type="hidden" value =" <?php echo set_hidden_value() ?>" name="hidden" id="value_manipulator" />
+            <input type="hidden" value ="<?php echo set_hidden_value()?>" name="hidden" id="value_manipulator" />
             <label for="rand">Enter a random number between 1 and 100</label><br/>
             <input type="number" name="rand_num" id="rand" placeholder="Enter the number here"/><br>
-            <label for="submit">Click Submit to send guess</label><br/>
+            <label for="submit">Click make your guess</label><br/>
             <input type="submit" id="submit" name="submit_rand" value="Submit"/>
         </form>
     <?php
