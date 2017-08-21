@@ -18,6 +18,7 @@
             if(isset($_GET['start']) && (int)$_GET['start']>0 && (int)$_GET['start']<100000)
                 $start=(int)$_GET['start'];//casting since the value is received from a user.
             $end=$start + PAGE_SIZE -1;
+            echo "<h1>Squaring Numbers</h1>Displaying square numbers of $start to $end";
         ?>
         <table border="1" width="20">
             <thead>
