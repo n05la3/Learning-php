@@ -1,4 +1,5 @@
 <?php
+echo "this just a test";
 class Calculator 
 {
     protected $num1;
@@ -52,5 +53,5 @@ class Advance_calc extends Calculator
         }
     }   
 }
-$my_calc = new Advance_calc(3,4);
+$my_calc = new Advance_calc(3,4)
 echo $my_calc->pow();

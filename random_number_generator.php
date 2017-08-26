@@ -86,6 +86,8 @@ in order to make it much more useful, test all security issues.-->
             <input type="submit" id="submit" name="submit_rand" value="Submit"/>
         </form>
     <?php
-    } ?>
+    }
+    echo "hello";
+    ?>
     
 </html>
