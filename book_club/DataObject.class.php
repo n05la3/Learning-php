@@ -1,6 +1,8 @@
 <?php
 require_once "config.php";
-
+/*
+*Abstract class used to connect to db 
+*/
 abstract class DataObject 
 {
 	protected $data = array();
@@ -21,7 +23,8 @@ abstract class DataObject
 	}
 	public function getValueEncoded( $field ) {
 		return htmlspecialchars( $this-> getValue( $field ));
-		}
+	}
+	//connecting to mysql
 	protected function connect() {
 		try{
 			$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
