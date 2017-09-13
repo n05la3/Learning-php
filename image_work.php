@@ -25,6 +25,8 @@ if(file_exists("noslac.jpg") && file_exists("copyright.png")){
 	$dest_height = imagesy($image);
 	$destX = ($dest_width - $src_width)/2;
 	$destY = ($dest_height - $src_height)/2;
+	$white = imagecolorexact($copyright, 255,255,255);
+	imagecolortransparent($copyright, $white);
 	imagecopy($image, $copyright, $destX, $destY, 0, 0, $src_width, $src_height);
 	header( "Content-type: image/jpeg" );
 	imagejpeg($image);
