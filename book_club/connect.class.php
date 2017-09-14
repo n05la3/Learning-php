@@ -96,20 +96,19 @@ class Member extends Data_object
 			$st->bindParam(':favoriteGenre',$usr_info[7],PDO::PARAM_STR);
 			$st->bindParam(':emailAddress',$usr_info[8],PDO::PARAM_STR);
 			$st->bindParam('otherInterest',$usr_info[9],PDO::PARAM_STR);			
-			if($st->execute()===FALSE)
+			if($st->execute()!==FALSE)
 				echo "Update was done successfully<br>";
 			parent::disconnect($conn);
 		}catch(PDOException $e){
 			//die("Unable to update user information: {$e->getMessage()}");
 			echo $e->getMessage();
-		};
-			
+		};	
 
 	}
 
 
 }
-$user_info = array(9,"Noslac","mypass","Dpro","Winter","2008-06-25","m","crime","prince@example.com", "Playing video games");
+$user_info = array(10,"Haon","Jkuh_2000?","Dpro","Winter","2008-06-25","m","crime","try@example.com", "Playing video games");
 Member::create_member($user_info);
 
 
