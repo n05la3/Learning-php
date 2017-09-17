@@ -29,7 +29,7 @@ class Book
 		$data = ["title", "author", "year_of_prod" ];
 		$properties = [$this->title, $this->author, $this->year_of_prod];
 		if(in_array($to_read, $data)){
-			switch ($to_read) {
+			/*switch ($to_read) {
 				case $properties[0]:
 					return $this->id;
 					break;
@@ -44,8 +44,14 @@ class Book
 				default:
 					return "Property not exist";
 					break;
+			}*/
+			for($i=0; $i<=array_count_values($data); $i++)
+			{
+				if(($found=array_search($to_read, $data))){
+					return $properties[$found];
+					break;
+				}
 			}
-			
 		}
 	}
 	
