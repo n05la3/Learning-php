@@ -1,7 +1,13 @@
 <?php 
 include "book.class.php";
-use Bookstore\Domain\Book;
+//use Bookstore\Domain\Book;
 echo "<pre>";
-$mybook = new Book("prince", "cch", "1994");
-print_r($mybook); echo "<br>";
-echo $mybook->get_value("year_of_prod");
+try{
+	if(-1<0)
+		throw new \Exception('Class book not found');
+}catch(Exception $e){
+	//echo $e->getMessage;
+}finally{
+	echo "unable to continue";
+}
+	
